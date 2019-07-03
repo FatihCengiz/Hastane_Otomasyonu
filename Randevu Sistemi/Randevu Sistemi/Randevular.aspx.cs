@@ -324,9 +324,9 @@ namespace Randevu_Sistemi
             {
 
                 baglanti.Open();
-                SqlCommand gond = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
+                SqlCommand gonder = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
 
-                gond.ExecuteNonQuery();
+                gonder.ExecuteNonQuery();
                 baglanti.Dispose();
                 baglanti.Close();
                 
