@@ -21,6 +21,7 @@ namespace Randevu_Sistemi
         {
             string sifre = "";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+
             baglanti.Open();
             SqlCommand gonderA = new SqlCommand("Select * from Kayit where Tc='" + TextBox1.Text + "'", baglanti);
             SqlDataReader dr = gonderA.ExecuteReader();
