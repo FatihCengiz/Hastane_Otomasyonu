@@ -268,6 +268,14 @@ namespace Randevu_Sistemi
                 Label1.Text = "Saatiniz : ";
                 Label2.Text = "15.00";
                 S15.BackColor = Color.Green;
+                S_8.BackColor = Color.Empty;
+                S_10.BackColor = Color.Empty;
+                S11.BackColor = Color.Empty;
+                S_9.BackColor = Color.Empty;
+                S13.BackColor = Color.Empty;
+                S14.BackColor = Color.Empty;
+                S_9.BackColor = Color.Empty;
+                S16.BackColor = Color.Empty;
             }
         }
 
