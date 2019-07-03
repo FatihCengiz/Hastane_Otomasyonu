@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Randevu_Sistemi.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: gainsboro">
+    <form id="form1" runat="server" >
+        <div style="position:absolute;  margin-left:40px;"><asp:Image ID="Image1" runat="server" src="images/Logo.png" Width="200px" /></div>
+        &nbsp;&nbsp;<div>
+          <h1 style="font-family: Arial, Helvetica, sans-serif; text-decoration: underline overline; color: #FF0000">
+                ONLİNE RANDEVU SİSTEMİ</h1>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+
