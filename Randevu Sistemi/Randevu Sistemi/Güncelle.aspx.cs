@@ -26,7 +26,7 @@ namespace Randevu_Sistemi
            
 
 
-                SqlConnection baglan = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+                SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
                 baglan.Open();
                 SqlCommand gonderc = new SqlCommand("Update Kayit SET Tc='" + TxtKTC.Text + "'  , Ad='" + TxtKAd.Text + "' , Soyad='" + TxtKSoy.Text + "' , Yas='" + TxtKYas.Text + "' , Telefon='" + TxtKTel.Text + "'   where Sifre='" + TxtKSifre.Text + "'", baglan);
                 gonderc.ExecuteNonQuery();

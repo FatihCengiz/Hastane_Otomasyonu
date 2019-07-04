@@ -50,10 +50,10 @@ namespace Randevu_Sistemi
 
         protected void S_8_Click(object sender, EventArgs e)
         {
-            Label2.Text = "08:00:00";
+            Label2.Text = "08.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -83,10 +83,10 @@ namespace Randevu_Sistemi
 
         protected void S_9_Click(object sender, EventArgs e)
         {
-            Label2.Text = "09:00:00";
+            Label2.Text = "09.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and   Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -117,10 +117,10 @@ namespace Randevu_Sistemi
 
   protected void S_10_Click(object sender, EventArgs e)
         {
-            Label2.Text = "10:00:00";
+            Label2.Text = "10.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -149,10 +149,10 @@ namespace Randevu_Sistemi
 
         protected void S11_Click(object sender, EventArgs e)
         {
-            Label2.Text = "11:00:00";
+            Label2.Text = "11.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -179,10 +179,10 @@ namespace Randevu_Sistemi
         }
         protected void S12_Click(object sender, EventArgs e)
         {
-            Label2.Text = "12:00:00";
+            Label2.Text = "12.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -210,10 +210,10 @@ namespace Randevu_Sistemi
 
         protected void S13_Click(object sender, EventArgs e)
         {
-            Label2.Text = "13:00:00";
+            Label2.Text = "13.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -231,10 +231,10 @@ namespace Randevu_Sistemi
 
         protected void S14_Click(object sender, EventArgs e)
         {
-            Label2.Text = "14:00:00";
+            Label2.Text = "14.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -252,7 +252,7 @@ namespace Randevu_Sistemi
 
         protected void S15_Click(object sender, EventArgs e)
         {
-            Label2.Text = "15:00:00";
+            Label2.Text = "15.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
             SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
@@ -271,7 +271,7 @@ namespace Randevu_Sistemi
                 S_8.BackColor = Color.Empty;
                 S_10.BackColor = Color.Empty;
                 S11.BackColor = Color.Empty;
-                S_9.BackColor = Color.Empty;
+                S12.BackColor = Color.Empty;
                 S13.BackColor = Color.Empty;
                 S14.BackColor = Color.Empty;
                 S_9.BackColor = Color.Empty;
@@ -281,10 +281,10 @@ namespace Randevu_Sistemi
 
         protected void S16_Click(object sender, EventArgs e)
         {
-            Label2.Text = "16:00:00";
+            Label2.Text = "16.00";
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where  Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
+            SqlCommand gonderA2 = new SqlCommand("Select * from Randevular where Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "' and Saat='" + Label2.Text + "'", baglanti);
             SqlDataReader dr = gonderA2.ExecuteReader();
             if (dr.Read())
             {
@@ -305,47 +305,49 @@ namespace Randevu_Sistemi
         {
             SqlConnection bag1 = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             bag1.Open();
-            SqlCommand gonderA1 = new SqlCommand("Select * from Randevular where  TC='" + TxtRTC.Text + "' and Ad='" + TxtRAd + "'", bag1);
+            SqlCommand gonderA1 = new SqlCommand("Select * from Kayit where  TC='" + TxtRTC.Text + "' and Ad='" + TxtRAd.Text + "' and Soyad='" + TxtRSoy.Text + "'", bag1);
             SqlDataReader dr1 = gonderA1.ExecuteReader();
             if (dr1.Read())
             {
-                Label11.Visible = true;
-                Label11.Text = "Randevu Alamazsınız";
-
-
-            }
-            else
-            { }
-
                 SqlConnection bag = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-            bag.Open();
-            SqlCommand gonderA = new SqlCommand("Select * from Randevular where  TC='" + TxtRTC.Text + "' and Bolum='" + DropDownList1.SelectedItem.Text + "'", bag);
-            SqlDataReader dr = gonderA.ExecuteReader();
-            if (dr.Read())
+                bag.Open();
+                SqlCommand gonderA = new SqlCommand("Select * from Randevular where  TC='" + TxtRTC.Text + "' and Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "'", bag);
+                SqlDataReader dr = gonderA.ExecuteReader();
+                if (dr.Read())
+                {
+                    Label11.Visible = true;
+                    Label11.Text = "Randevu Alamazsınız";
+
+
+                }
+                else
+                {
+
+                    baglanti.Open();
+                    SqlCommand gonder = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
+
+                    gonder.ExecuteNonQuery();
+                    baglanti.Dispose();
+                    baglanti.Close();
+
+                    TxtRAd.Text = "";
+
+
+
+                    Label11.Visible = true;
+                    Label11.Text = "Kaydınız Gerçekleşti";
+
+                }
+}
+                           
+           else
             {
+
                 Label11.Visible = true;
-                Label11.Text = "Randevu Alamazsınız";
-               
+                Label11.Text = "Bu Tc ile randevu alamazsınız";
 
             }
-            else
-            {
 
-                baglanti.Open();
-                SqlCommand gonder = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
-
-                gonder.ExecuteNonQuery();
-                baglanti.Dispose();
-                baglanti.Close();
-                
-            TxtRAd.Text = "";
-
-
-
-            Label11.Visible = true;
-            Label11.Text = "Kaydınız Gerçekleşti";
-
-        }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
