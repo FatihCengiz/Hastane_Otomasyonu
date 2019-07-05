@@ -32,8 +32,6 @@ namespace Randevu_Sistemi
                 gonderc.ExecuteNonQuery();
                 baglan.Dispose();
                 baglan.Close();
-          
-
                 Label1.Visible = true;
                 Label1.Text = "İslemiz Gerçekleşti";
             

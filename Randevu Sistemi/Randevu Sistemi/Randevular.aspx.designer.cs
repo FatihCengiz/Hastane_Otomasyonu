@@ -166,6 +166,15 @@ namespace Randevu_Sistemi {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
+        /// lbT denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbT;
+        
+        /// <summary>
         /// Label11 denetimi.
         /// </summary>
         /// <remarks>

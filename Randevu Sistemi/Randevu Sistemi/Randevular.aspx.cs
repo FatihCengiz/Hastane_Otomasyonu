@@ -19,6 +19,8 @@ namespace Randevu_Sistemi
      SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
      protected void Page_Load(object sender, EventArgs e)
      {
+            lbT.Text = Request.QueryString["Tc"];
+            lbT.Visible = false;
             lblAd.Visible = false;
             lblSoy.Visible = false;
             lblBol.Visible = false;
@@ -226,6 +228,14 @@ namespace Randevu_Sistemi
                 Label1.Text = "Saatiniz : ";
                 Label2.Text = "13.00";
                 S13.BackColor = Color.Green;
+                S_8.BackColor = Color.Empty;
+                S_10.BackColor = Color.Empty;
+                S11.BackColor = Color.Empty;
+                S12.BackColor = Color.Empty;
+                S16.BackColor = Color.Empty;
+                S14.BackColor = Color.Empty;
+                S_9.BackColor = Color.Empty;
+                S15.BackColor = Color.Empty;
             }
         }
 
@@ -247,6 +257,14 @@ namespace Randevu_Sistemi
                 Label1.Text = "Saatiniz : ";
                 Label2.Text = "14.00";
                 S14.BackColor = Color.Green;
+                S_8.BackColor = Color.Empty;
+                S_10.BackColor = Color.Empty;
+                S11.BackColor = Color.Empty;
+                S12.BackColor = Color.Empty;
+                S13.BackColor = Color.Empty;
+                S16.BackColor = Color.Empty;
+                S_9.BackColor = Color.Empty;
+                S15.BackColor = Color.Empty;
             }
         }
 
@@ -290,6 +308,7 @@ namespace Randevu_Sistemi
             {
                 Label1.Text = "Dolu Saat";
                 S16.BackColor = Color.Red;
+                
 
             }
             else
@@ -297,55 +316,71 @@ namespace Randevu_Sistemi
                 Label1.Text = "Saatiniz : ";
                 Label2.Text = "16.00";
                 S16.BackColor = Color.Green;
+                S_8.BackColor = Color.Empty;
+                S_10.BackColor = Color.Empty;
+                S11.BackColor = Color.Empty;
+                S12.BackColor = Color.Empty;
+                S13.BackColor = Color.Empty;
+                S14.BackColor = Color.Empty;
+                S_9.BackColor = Color.Empty;
+                S15.BackColor = Color.Empty;
             }
         }
 
 
         protected void BtnKKayıt_Click(object sender, EventArgs e)
         {
-            SqlConnection bag1 = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-            bag1.Open();
-            SqlCommand gonderA1 = new SqlCommand("Select * from Kayit where  TC='" + TxtRTC.Text + "' and Ad='" + TxtRAd.Text + "' and Soyad='" + TxtRSoy.Text + "'", bag1);
-            SqlDataReader dr1 = gonderA1.ExecuteReader();
-            if (dr1.Read())
+            if (lbT.Text == TxtRTC.Text)
             {
-                SqlConnection bag = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-                bag.Open();
-                SqlCommand gonderA = new SqlCommand("Select * from Randevular where  TC='" + TxtRTC.Text + "' and Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "'", bag);
-                SqlDataReader dr = gonderA.ExecuteReader();
-                if (dr.Read())
+                SqlConnection bag1 = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+                bag1.Open();
+                SqlCommand gonderA1 = new SqlCommand("Select * from Kayit where  TC='" + TxtRTC.Text + "' and Ad='" + TxtRAd.Text + "' and Soyad='" + TxtRSoy.Text + "'", bag1);
+                SqlDataReader dr1 = gonderA1.ExecuteReader();
+                if (dr1.Read())
                 {
-                    Label11.Visible = true;
-                    Label11.Text = "Randevu Alamazsınız";
+                    SqlConnection bag = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+                    bag.Open();
+                    SqlCommand gonderA = new SqlCommand("Select * from Randevular where  TC='" + TxtRTC.Text + "' and Bolum='" + DropDownList1.SelectedItem.Text + "' and Tarih='" + TxtRTarih.Text + "'", bag);
+                    SqlDataReader dr = gonderA.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Label11.Visible = true;
+                        Label11.Text = "Randevu Alamazsınız";
 
 
+                    }
+                    else
+                    {
+
+                        baglanti.Open();
+                        SqlCommand gonder = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
+
+                        gonder.ExecuteNonQuery();
+                        baglanti.Dispose();
+                        baglanti.Close();
+
+                        TxtRAd.Text = "";
+
+
+
+                        Label11.Visible = true;
+                        Label11.Text = "Kaydınız Gerçekleşti";
+
+                    }
                 }
+
                 else
                 {
 
-                    baglanti.Open();
-                    SqlCommand gonder = new SqlCommand("insert into Randevular(Bolum,TC,Ad,Soyad,Tarih,Saat)values('" + DropDownList1.SelectedItem.Text + "','" + TxtRTC.Text + "','" + TxtRAd.Text + "','" + TxtRSoy.Text + "','" + TxtRTarih.Text + "','" + Label2.Text + "' )", baglanti);
-
-                    gonder.ExecuteNonQuery();
-                    baglanti.Dispose();
-                    baglanti.Close();
-
-                    TxtRAd.Text = "";
-
-
-
                     Label11.Visible = true;
-                    Label11.Text = "Kaydınız Gerçekleşti";
+                    Label11.Text = "Sistemde kayıtlı değilsiniz";
 
                 }
-}
-                           
-           else
+            }
+            else
             {
-
                 Label11.Visible = true;
-                Label11.Text = "Bu Tc ile randevu alamazsınız";
-
+                Label11.Text = "Lütfen kendi TC kimlik numarınızı giriniz";
             }
 
         }
@@ -406,7 +441,7 @@ namespace Randevu_Sistemi
             baglanti.Close();
 
             Label12.Visible = true;
-                Label12.Text = "Silindi";
+            Label12.Text = "Silindi";
 
 
             

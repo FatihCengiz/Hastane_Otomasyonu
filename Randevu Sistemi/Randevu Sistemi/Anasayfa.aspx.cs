@@ -28,20 +28,33 @@ namespace Randevu_Sistemi
 
         protected void BtnGiris_Click(object sender, EventArgs e)
         {
-
-            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-       
-            SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-            baglanti.Open();
-            SqlCommand gonderA = new SqlCommand("Select * from Kayit where Tc='" + TxtTC.Text + "' and Sifre='" + TxtSifre.Text + "'", baglanti);
-            SqlDataReader dr = gonderA.ExecuteReader();
-            if (dr.Read())
+            if (TxtTC.Text.Length == 11)
             {
-                Response.Redirect("Randevular.aspx");
+              
+                    SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+
+                    SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+                    baglanti.Open();
+                    SqlCommand gonderA = new SqlCommand("Select * from Kayit where Tc='" + TxtTC.Text + "' and Sifre='" + TxtSifre.Text + "'", baglanti);
+                    SqlDataReader dr = gonderA.ExecuteReader();
+                    if (dr.Read())
+                    {
+
+                        Response.Redirect("Randevular.aspx?Tc=" + TxtTC.Text);
+                    }
+                    else
+                    {
+                        Label1.Visible = true;
+                        Label1.Text = ("Hatalı Giriş Yaptınız");
+                    }
+                
+               
             }
-            else {
+            else
+            {
                 Label1.Visible = true;
-                Label1.Text=("Hatalı Giriş Yaptınız"); }
+                Label1.Text = ("Kısa TC kimlik numarası girdiniz !");
+            }
         }
 
         protected void BtnSH_Click(object sender, EventArgs e)
