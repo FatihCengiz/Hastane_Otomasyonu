@@ -23,8 +23,14 @@ namespace Randevu_Sistemi
 
         protected void BtnKKayıt_Click(object sender, EventArgs e)
         {
-           
 
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+
+            baglanti.Open();
+            SqlCommand gonderA = new SqlCommand("Select * from Kayit where Sifre='" + TxtKSifre.Text + "'", baglanti);
+            SqlDataReader dr = gonderA.ExecuteReader();
+            if (dr.Read())
+            {
 
                 SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
                 baglan.Open();
@@ -34,6 +40,15 @@ namespace Randevu_Sistemi
                 baglan.Close();
                 Label1.Visible = true;
                 Label1.Text = "İslemiz Gerçekleşti";
+            }
+            else
+            {
+                Label1.Visible = true;
+                Label1.Text = "Yanlış Şifre";
+            }
+
+        
+            
             
             
 

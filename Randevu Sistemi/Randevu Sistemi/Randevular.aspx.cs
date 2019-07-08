@@ -435,7 +435,7 @@ namespace Randevu_Sistemi
 
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA = new SqlCommand("DELETE FROM Randevular WHERE TC='" + TextBox1.Text + "'", baglanti);
+            SqlCommand gonderA = new SqlCommand("DELETE FROM Randevular WHERE TC='" + TextBox1.Text + "' and Tarih='"+TxtRTarih.Text + "'and Bolum='" + TextBox3.Text + "'", baglanti);
             gonderA.ExecuteNonQuery();
             baglanti.Dispose();
             baglanti.Close();
