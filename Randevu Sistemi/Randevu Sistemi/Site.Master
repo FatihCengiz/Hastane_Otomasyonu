@@ -13,8 +13,8 @@
     <form id="form1" runat="server" >
         <div style="position:absolute;  margin-left:40px;"><asp:Image ID="Image1" runat="server" src="images/Logo.png" Width="200px" /></div>
         &nbsp;&nbsp;<div>
-          <h1 style="font-family: Arial, Helvetica, sans-serif; text-decoration: underline overline; color: #FF0000">
-                ONLİNE RANDEVU SİSTEMİ</h1>
+        <center>  <h1 style="font-family: Arial, Helvetica, sans-serif; text-decoration: underline overline; color: #FF0000">
+                ONLİNE RANDEVU SİSTEMİ</h1></center>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

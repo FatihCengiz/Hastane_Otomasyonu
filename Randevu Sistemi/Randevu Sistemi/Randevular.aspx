@@ -82,7 +82,7 @@
                 </h2>
         <h2>
                     <asp:Label ID="Label4" runat="server" Text="Bölüm :"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox3" AutoCompleteType="Disabled" runat="server" Height="20px" Width="216px" MaxLength="40"></asp:TextBox>
+&nbsp;     <asp:DropDownList ID="DropDownList2" runat="server" Width="260px" Height="30px" ></asp:DropDownList>
                 </h2>
                 <p>&nbsp;</p>
                 <h2>

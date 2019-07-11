@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Anasayfa.aspx" />
-    <Content Include="deniyorum.aspx" />
     <Content Include="Güncelle.aspx" />
     <Content Include="Hesap.aspx" />
     <Content Include="images\Logo.png" />
@@ -85,13 +84,6 @@
     </Compile>
     <Compile Include="Anasayfa.aspx.designer.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="deniyorum.aspx.cs">
-      <DependentUpon>deniyorum.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="deniyorum.aspx.designer.cs">
-      <DependentUpon>deniyorum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Güncelle.aspx.cs">
       <DependentUpon>Güncelle.aspx</DependentUpon>

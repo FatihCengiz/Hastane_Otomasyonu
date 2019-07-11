@@ -17,7 +17,8 @@ namespace Randevu_Sistemi
     public partial class Randevular : System.Web.UI.Page
     { SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
      SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
-     protected void Page_Load(object sender, EventArgs e)
+        SqlConnection baglan2 = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
+        protected void Page_Load(object sender, EventArgs e)
      {
             lbT.Text = Request.QueryString["Tc"];
             lbT.Visible = false;
@@ -45,9 +46,28 @@ namespace Randevu_Sistemi
 
     
          }
-    
-    
-         }
+          
+            if (!IsPostBack)
+            {
+                baglan2.Open();
+                string query2 = "Select  Bolum from  Bolumler";
+                SqlDataAdapter da2 = new SqlDataAdapter(query2, baglan2);
+                da2.SelectCommand.ExecuteNonQuery();
+                DataSet ds2 = new DataSet();
+                da2.Fill(ds2);
+                DropDownList2.DataSource = ds2;
+                DropDownList2.DataValueField = "Bolum";
+                DropDownList2.DataTextField = "Bolum";
+                DropDownList2.DataBind();
+                baglan2.Close();
+
+                baglan2.Open();
+
+
+            }
+
+
+        }
 
 
         protected void S_8_Click(object sender, EventArgs e)
@@ -391,10 +411,11 @@ namespace Randevu_Sistemi
             string bolum = "";
             string tarih = "";
             string saat = "";
+            
 
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA = new SqlCommand("Select * from Randevular where TC='" + TextBox1.Text +"' and Tarih = '" + TextBox2.Text +"'", baglanti);
+            SqlCommand gonderA = new SqlCommand("Select * from Randevular where TC='" + TextBox1.Text +"' and Tarih = '" + TextBox2.Text + "' and Bolum = '" + DropDownList2.Text + "' ", baglanti);
             SqlDataReader dr = gonderA.ExecuteReader();
             if (dr.Read())
 
@@ -412,7 +433,7 @@ namespace Randevu_Sistemi
                 lblBol.Text = bolum;
                 lblZaman.Visible = true;
                 tarih = dr["Tarih"].ToString();
-                lblZaman.Text = tarih;
+                lblZaman.Text = tarih;  
                 lblSaat.Visible = true;
                 saat = dr["Saat"].ToString();
                 lblSaat.Text = saat;
@@ -435,7 +456,7 @@ namespace Randevu_Sistemi
 
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-T62RT0H\SQLEXPRESS;Initial Catalog=Randevu; Integrated Security=True");
             baglanti.Open();
-            SqlCommand gonderA = new SqlCommand("DELETE FROM Randevular WHERE TC='" + TextBox1.Text + "' and Tarih='"+TxtRTarih.Text + "'and Bolum='" + TextBox3.Text + "'", baglanti);
+            SqlCommand gonderA = new SqlCommand("DELETE FROM Randevular WHERE TC='" + TextBox1.Text + "' and Tarih='"+TxtRTarih.Text + "'and Bolum='" + DropDownList2.Text + "'", baglanti);
             gonderA.ExecuteNonQuery();
             baglanti.Dispose();
             baglanti.Close();
