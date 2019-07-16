@@ -73,9 +73,12 @@
     <Content Include="images\Logo.png" />
     <Content Include="Kayit.aspx" />
     <Content Include="Randevular.aspx" />
+    <Content Include="resimler\Doktor1.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Bolumler.aspx" />
+    <Content Include="Doktorlar.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anasayfa.aspx.cs">
@@ -120,6 +123,20 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Bolumler.aspx.cs">
+      <DependentUpon>Bolumler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bolumler.aspx.designer.cs">
+      <DependentUpon>Bolumler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doktorlar.aspx.cs">
+      <DependentUpon>Doktorlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doktorlar.aspx.designer.cs">
+      <DependentUpon>Doktorlar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
